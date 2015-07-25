@@ -46,7 +46,7 @@ VOLUME ["/etc/mysql", "/var/lib/mysql"]
 #设置工作目录
 WORKDIR /data
 #容器启动
-ENTRYPOINT mysqld_safe && /usr/sbin/sshd -D
+ENTRYPOINT service mysql start && /usr/sbin/sshd -D
 #监听端口
 EXPOSE 22
 EXPOSE 3306
